@@ -2,3 +2,46 @@
 select.dog-selector {
     margin-bottom: 15px;
 }
+section.top-home {
+    margin-left: 100px;
+}
+.dogMain {
+    font-family: 'Open Sans', sans-serif;
+}
+.text-escolha {
+    font-size: 18px;
+}
+.nomeAnimal {
+    font-size: 18px;
+}
+.top-home {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#edit {
+    border-radius: 5px;
+    width: 100%;
+}
+#nomeDoCachorro {
+    width: 100%;
+    border-radius: 5px;
+    height: 25px;
+}
+.salvarbtn {
+    height: 40px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #000;
+    border: 0.1em solid #c4de7d;
+    padding: 0.2em 1em;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    transition: all 0.5s;
+}
+.salvarbtn:hover{
+    background-color: #c4de7d;
+}

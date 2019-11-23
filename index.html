@@ -2,17 +2,19 @@
 <html>
 <head>
 	<title>Projeto Enext</title>
-	<style src="css/mainSyle.scss"></style>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/mainSyle.css">
 	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/dog.js"></script>
+	
 </head>
 <body class="dogMain">
 	<section class="top-home">
 		<div>
 		    <div class="code-wrapper breeds">
 		        <span class="code">
-		        	<p>Escolha a raça aqui!</p>
-		        	<select class="dog-selector">
+		        	<p class="text-escolha">Escolha a raça aqui!</p>
+		        	<select id="edit" class="dog-selector" contenteditable="true">
 					    <option value="affenpinscher">affenpinscher</option>
 					    <option value="african">african</option>
 					    <option value="airedale">airedale</option>
@@ -156,11 +158,48 @@
 				
 			</div>
 			<p class="nomeAnimal">Digite aqui o nome do seu cachorro:</p>
-			<input type="text" name="nomeCachorro" />
-			<button class="btn salvarbtn" onclick="gravarDadosSession()">Salvar informações</button>
+			<input id="nomeDoCachorro" type="text" name="nomeCachorro_" />
+			<p class="text-font">Escolha o tipo de font</p>
+		        
+					<select id="selectFont" class="font-selector" contenteditable="true">
+							<optgroup style="font-family:arial">
+								<option>Arial</option>
+							</optgroup>
+							<optgroup style="font-family:verdana">
+								<option>veranda</option>
+							</optgroup>
+							<optgroup style="font-family:ubuntu">
+									<option>ubuntu</option>
+							</optgroup>
+							<optgroup style="font-family:ubuntu">
+									<option>ubuntu</option>
+							</optgroup>
+							<optgroup style="font-family:pacifico">
+									<option>pacifico</option>
+							</optgroup>
+					</select>
+					<br>
+					<p class="text-font">Escolha a cor</p>
+					<select id="selectCor" class="Cor-selector" contenteditable="true">
+							<optgroup style="color:red">
+								<option>Vermelho</option>
+							</optgroup>
+							<optgroup style="color:blue">
+								<option>Azul</option>
+							</optgroup>
+							<optgroup style="color:blueviolet">
+									<option>Roxo</option>
+							</optgroup>
+							<optgroup style="color:yellow">
+									<option>Amarelo</option>
+							</optgroup>
+							<optgroup style="color:green">
+									<option>Verde</option>
+							</optgroup>
+					</select>		
+			<button class="btn salvarbtn" onclick="salvarDados()">Salvar informações</button>
 	</section>
 
-
-
+	<script src="js/dog.js"></script>
 </body>
 </html>

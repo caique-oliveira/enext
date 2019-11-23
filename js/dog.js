@@ -1,5 +1,4 @@
 $("#consultar").click(function(){
-	console.log("click exibe a imagem");
 	$.get( "https://dog.ceo/api/breeds/image/random", function(data) {
 
             var output="<ul>";
@@ -40,11 +39,13 @@ function loadDogs() {
             $(".images-dog").html("<img src='" + result.message + "'>");
         });
     });
+    
 }
 $(".dog-selector").change(function() {
     $(".dog-selector option:selected").each(function() {
         getDog();
     });
+    
 });
 $(".get-dog").click(function() {
     getDog();
@@ -52,14 +53,61 @@ $(".get-dog").click(function() {
 $(document).ready(function() {
     loadDogs();
 });
-function gravarDadosSession(){
-	localStorage.setItem('nomeCachorro',nomeCachorro.value);
-
-}
+$(function() {
+    $('#edit').change(function() {
+        localStorage.setItem('raça', this.value);
+    });
+    if(localStorage.getItem('raça')){
+        $('#edit').val(localStorage.getItem('raça'));
+    }
+  
+});
 function salvaNome(){
-
-	var nome = localStorage.getItem('nomeCachorro');
+    var nome = localStorage.setItem('#nomeCachorro');
+	var nome = localStorage.getItem('#nomeCachorro');
 	
   	document.getElementById('status').innerHTML=nome+"<br>"+email;
 	document.getElementById('avatar').innerHTML= "<img src="+imagem+" />";
 }
+$(".salvarbtn").click(function(){
+    alert("Dados Salvos com sucesso");
+});
+// consumindo a api do google fonts
+$("#selectFont").click(function(){
+	$.get( "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCXWEVLT4PtEGCzKOofdo5qewPpAP3QEqQ", function(data) {
+
+            var output="<ul>";
+            for (var i in data.Product.ProductImage) 
+            {
+                output+="<li>" + data.Product.ProductImage.i.http  + "</li>";
+            }
+            output+="</ul>";
+
+            $('span').html(output);
+	});
+
+$('#selectFont').html(dadosjSon);
+});
+//código troca de font
+$(".selectFont").change(function() {
+    $(".selectFont option:selected").each(function() {
+        getFont();
+    });
+    
+});
+//armazenando font em local storage
+$(function() {
+    $('#selectFont').change(function() {
+        localStorage.setItem('Font', this.value);
+    });
+    if(localStorage.getItem('Font')){
+        $('#selectFont').val(localStorage.getItem('Font'));
+    }
+    
+    $('#selectCor').change(function() {
+        localStorage.setItem('Cor', this.value);
+    });
+    if(localStorage.getItem('Cor')){
+        $('#selectCor').val(localStorage.getItem('Cor'));
+    }
+});
