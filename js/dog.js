@@ -19,12 +19,6 @@ function getDog() {
     dogURL = selectedDog.replace(/-/g, '/');
     $.getJSON("https://dog.ceo/api/breed/" + dogURL + "/images/random", function(result) {
         $(".images-dog").html("<img src='" + result.message + "'>");
-        
-            localStorage.setItem('imagem', this.value);
-        
-        if(localStorage.getItem('imagem')){
-            $('.images-dog').val(localStorage.getItem('imagem'));
-        }
     });
 }
 
